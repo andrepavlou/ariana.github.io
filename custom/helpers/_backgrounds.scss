@@ -1,0 +1,133 @@
+/*
+*
+* Backgrounds
+*/
+
+.context-dark {
+	@include context-dark;
+}
+
+%context-dark {
+	@include context-dark;
+
+	p { font-weight: 100; }
+	.text-gray-600 { color: $gray-400; }
+}
+
+%context-light {
+	@include context-light;
+}
+
+/**
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+.bg-gray-light{
+	@include bg-behaviour($gray-light);
+}
+
+.bg-accent-green{
+	@include bg-behaviour($accent-green);
+}
+
+.bg-white {
+	@include bg-behaviour($white);
+}
+
+/**
+* Dark Backgrounds
+*/
+.bg-gray-dark {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+/** 
+* Accent Backgrounds
+*/
+.bg-primary {
+	@include bg-behaviour($primary);
+	@extend %context-dark;
+}
+
+.bg-primary-dark {
+	@include bg-behaviour($primary);
+	@extend %context-dark;
+}
+
+.bg-dark {
+	@include bg-behaviour($gray-800);
+	@extend %context-dark;
+}
+
+.bg-accent-green {
+	@include bg-behaviour($accent-green);
+	@extend %context-dark;
+}
+.bg-accent-green {
+	@include bg-behaviour($accent-orange);
+	@extend %context-dark;
+}
+
+.bg-primary-gradient {
+	background-image: linear-gradient(to right, $primary, $primary);
+	@extend %context-dark;
+}
+
+/**
+* Background Image
+*/
+.bg-image {
+
+}
+
+[class^='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+.bg-cover{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.primary-bg{
+	background: $primary;
+}
+.accent-green-bg{
+	background: $accent-green;
+}
+
+.accent-violet-bg{
+	background: $accent-violet;
+}
+
+.accent-orange-bg{
+	background: $accent-orange;
+}
+.accent-red-bg{
+	background: $accent-red;
+}
+.progress-linear{
+	.progress-bar-linear{
+		&.primary-bg,&.accent-green-bg,&.accent-orange-bg,&.accent-red-bg{
+			background-image: none;
+		}
+	}
+}

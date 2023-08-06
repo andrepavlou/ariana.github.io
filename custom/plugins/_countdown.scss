@@ -1,0 +1,140 @@
+/** @section Countdown */
+
+.countdown {
+	display: inline-flex;
+	justify-content: space-around;
+	text-align: center;
+	max-width: 620px;
+	width: 100%;
+	margin-left:-5px;
+	margin-right:-5px;
+	line-height: 1.2;
+	padding-bottom: 20px;
+}
+
+.countdown-block {
+	position: relative;
+	padding: 0 5px;
+}
+
+.countdown-block-seconds {
+	display: none;
+}
+
+.countdown-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.countdown-circle {
+	fill: transparent;
+	max-width: 100%;
+	height: auto;
+}
+
+.countdown-circle-bg {
+	stroke: rgba($white, .3);
+	stroke-width: 5px;
+}
+
+.countdown-circle-fg {
+	stroke: $primary;
+	stroke-width: 10px;
+}
+.countdown-block-days{
+	.countdown-circle-fg{
+		stroke: $primary;
+	}
+}
+.countdown-block-hours{
+	.countdown-circle-fg{
+		stroke: $accent-green;
+	}
+}
+.countdown-block-minutes{
+	.countdown-circle-fg{
+		stroke: $accent-orange;
+	}
+}
+.countdown-block-seconds{
+	.countdown-circle-fg{
+		stroke: $accent-red;
+	}
+}
+
+
+.countdown-counter {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+	color: $gray-900;
+}
+
+.countdown-title {
+	font-size: 14px;
+	line-height: 1.2;
+	color: $white;
+	position: absolute;
+	text-transform: capitalize;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+* + .countdown {
+	margin-top: 35px;
+}
+
+.countdown + * {
+	margin-top: 35px;
+}
+
+
+@include media-breakpoint-up(sm) {
+	.countdown-block-seconds {
+		display: block;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.countdown {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.countdown-block {
+		padding: 0 20px;
+	}
+
+	.countdown-counter {
+		font-size: 16px;
+	}
+
+	.countdown-circle-bg {
+		stroke-width: 3px;
+	}
+
+	.countdown-circle-fg {
+		stroke-width: 5px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.countdown-counter {
+		font-size: 20px;
+	}
+}
+
+
+%context-dark {
+	.countdown-counter {
+		color: $white;
+	}
+}

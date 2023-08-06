@@ -1,0 +1,189 @@
+/**
+*
+* RD Navbar Corporate
+* =====================================================
+*/
+.rd-navbar-creative {
+	// Static
+	&.rd-navbar-static {
+		background: $white;
+
+		// RD Navbar Nav
+		//
+
+		.rd-navbar-nav-wrap {
+			display: flex;
+			align-items: center;
+		}
+
+		.rd-navbar-nav {
+		}
+
+		// RD Navbar Nav Toggle
+		.rd-navbar-nav-toggle-wrap {
+		}
+
+		// RD Nav item 1-st level
+		.rd-nav-item {
+			.rd-nav-link {
+				padding: 9px 0;
+				border-bottom: 3px solid transparent;
+				margin-bottom: -1px;
+			}
+			&.active{
+
+
+			}
+
+
+			&.focus,
+			&.opened {
+				.rd-nav-link {
+					color: $primary;
+					border-color: $primary;
+					+.rd-navbar-submenu-toggle{
+						color: $primary;
+					}
+				}
+
+				> .rd-navbar-submenu-toggle {
+					color: $gray-700;
+				}
+			}
+
+			&.active {
+				.rd-nav-link {
+					border-color: $primary;
+				}
+
+				> .rd-navbar-submenu-toggle {
+					color: $primary;
+				}
+			}
+
+			> .rd-navbar-submenu-toggle {
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+
+		.rd-nav-item + .rd-nav-item {
+			margin-left: 25px;
+		}
+
+		// Rd Nav Link 1-st level
+		.rd-nav-link {
+			&:hover {
+				color: $primary;
+				border-color: $primary;
+
+			}
+
+		}
+
+		.rd-navbar-aside-outer,
+		.rd-navbar-main-outer {
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+
+		.rd-navbar-aside,
+		.rd-navbar-main {
+			max-width: $rd-navbar-static-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.rd-navbar-aside {
+			padding: 10px 0;
+		}
+
+		.rd-navbar-main {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 0;
+		}
+
+		// Extra large ≥1200px
+		@include media-breakpoint-up(xl) {
+			.rd-nav-item + .rd-nav-item {
+				margin-left: 51px;
+			}
+			.rd-navbar-main {
+				padding: 21px 0;
+			}
+		}
+
+		.rd-navbar-search-toggle {
+			font-size: 24px;
+			color: $gray-700;
+
+			&:hover {
+				color: $rd-navbar-nav-hover-color;
+			}
+		}
+
+		.rd-navbar-search-toggle {
+			@include toggle-icons-via-rotation(40px, 40px, 24px, '\f43b', '\f24c', 'Material Design Icons', 'Material Design Icons');
+			color: $gray-700;
+
+			span {
+				&:before,
+				&:after {
+					transition: .3s transform;
+				}
+			}
+
+			> span {
+				background: transparent;
+				border-radius: 50%;
+			}
+
+			&:hover {
+				color: $primary;
+
+				> span {
+
+				}
+			}
+		}
+
+		// RD Navbar Brand
+		.brand {
+			&-logo-dark { display: block; }
+			&-logo-light { display: none; }
+		}
+
+		.rd-navbar-main-element {
+			display: flex;
+			align-items: center;
+		}
+
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			background: $white;
+			box-shadow: $rd-navbar-shadow;
+
+			.rd-navbar-aside-outer {
+				display: none;
+			}
+
+			.rd-navbar-main {
+				padding: 12px 0;
+			}
+
+			.rd-navbar-nav-item {
+				> .rd-navbar-submenu {
+					margin-top: 17px;
+				}
+			}
+		}
+	}
+
+	// Fixed 
+	&.rd-navbar-fixed {
+	}
+}
