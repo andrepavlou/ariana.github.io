@@ -1,0 +1,469 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+
+block page
+	// Page Header
+	include ../sections/_header-creative
+
+	// Swiper
+	section.section.swiper-container.swiper-slider.swiper-slider-2#home(data-loop='true' data-autoplay='50000' data-simulate-touch="false" data-slide-effect="fade")
+		.swiper-wrapper.text-lg-start.text-center
+			.swiper-slide(data-slide-bg='images/slider-1-1920x900.jpg')
+				.swiper-slide-caption
+					.container
+						.row.justify-content-lg-center
+							.col-12
+								h1(data-caption-animate='fadeInUp' data-caption-delay='100')
+									span.d-block.fw-medium A Perfect Learning Center
+									span.d-block.fw-thin for Your Kids
+								a.button.button-240.button-primary.self-center-md(href='#' data-caption-animate='fadeInUp' data-caption-delay='450') Learn More
+
+			.swiper-slide(data-slide-bg='images/slider-2-1920x900.jpg' style='background-position: 50% 50%')
+				.swiper-slide-caption
+					.container
+						.row.justify-content-lg-center
+							.col-12
+								h1(data-caption-animate='fadeInUp' data-caption-delay='100')
+									span.d-block.fw-medium Best Teachers
+									span.d-block.fw-thin and Environment
+								a.button.button-240.button-primary.self-center-md(href='#' data-caption-animate='fadeInUp' data-caption-delay='450') Learn More
+
+			.swiper-slide(data-slide-bg='images/slider-3-1920x900.jpg' style='background-position: 50% 50%')
+				.swiper-slide-caption
+					.container
+						.row.justify-content-lg-center
+							.col-12
+								h1(data-caption-animate='fadeInUp' data-caption-delay='100')
+									span.d-block.fw-medium Varied Curriculum for
+									span.d-block.fw-thin Kids and Teens
+								a.button.button-240.button-primary.self-center-md(href='#' data-caption-animate='fadeInUp' data-caption-delay='450') Learn More
+
+		.swiper-meta
+			ul.links
+				li: a.icon.icon-meta.mdi.mdi-facebook(href="#")
+				li: a.icon.icon-meta.mdi.mdi-twitter(href="#")
+				li: a.icon.icon-meta.mdi.mdi-instagram(href="#")
+				li: a.icon.icon-meta.mdi.mdi-facebook-messenger(href="#")
+			// Swiper Pagination
+			.swiper-pagination
+
+	// Special Education
+	section.section.context-dark
+		.row.row-flex.g-0
+			.col-md-6.col-lg-3
+				.blurb-boxed-2
+					.icon.linearicons-book2
+					h6.title Special Education
+					p.exeption Our Special Education Program offers quality education to children with disabilities and developmental delays.
+
+			.col-md-6.col-lg-3
+				.blurb-boxed-2.blurb-boxed-green
+					.icon.linearicons-sun
+					h6.title Full Day Session
+					p.exeption At Kinderex, we offer full-day preschool sessions built on a play-based approach for kids ages two to five.
+
+			.col-md-6.col-lg-3
+				.blurb-boxed-2.blurb-boxed-orange
+					.icon.linearicons-license
+					h6.title Qualified Teachers
+					p.exeption Our team consists of experienced and creative teachers who are dedicated to your kids’ successful education.
+
+			.col-md-6.col-lg-3
+				.blurb-boxed-2.blurb-boxed-red
+					p.exeption The Best Preschool
+					h5.title Providing Quality Education in a Creative Environment
+					a.button.button-280.button-default-outline(href="#")
+						| Learn More
+
+	// What We Offer
+	section.section.section-lg#about
+		.container
+			.block-lg.text-center
+				h2 What We Offer
+				p At our education center, we provide a variety of benefits and advantages for your kids’ successful education, while allowing your kid to stay fully active, creative, and healthy.
+
+			.row.row-30.row-xxl-60
+				.col-sm-6.col-md-4.wow.fadeInLeft
+					+blurb-image({
+						icon: "linearicons-shield",
+						circleDecoration: "circle-top-left circle-yellow",
+						title: "Safety First",
+						exeption: "We offer first-class protection and security for your children at Kinderex."
+					})
+				.col-sm-6.col-md-4.wow.fadeInLeft(data-wow-delay="0.1s")
+					+blurb-image({
+						icon: "linearicons-group-work",
+						circleDecoration: "circle-right-bottom circle-orange",
+						title: "Small Class Size",
+						exeption: "All classes at our center have up to 6 students regardless of the curriculum."
+					})
+				.col-sm-6.col-md-4.wow.fadeInLeft(data-wow-delay="0.2s")
+					+blurb-image({
+						icon: "linearicons-license2",
+						circleDecoration: "circle-top-right circle-pink",
+						title: "Certified Teachers",
+						exeption: "We hire only the most experienced and certified teachers for your children."
+					})
+				.col-sm-6.col-md-4.wow.fadeInLeft(data-wow-delay="0.1s")
+					+blurb-image({
+						icon: "linearicons-baby2",
+						circleDecoration: "circle-right-bottom circle-orange",
+						title: "Infant Care",
+						exeption: "Meeting the educational needs of infants through quality infant care."
+					})
+				.col-sm-6.col-md-4.wow.fadeInLeft(data-wow-delay="0.2s")
+					+blurb-image({
+						icon: "linearicons-palette",
+						circleDecoration: "circle-top-left circle-pink",
+						title: "Creative Lessons",
+						exeption: "Our curriculum was designed to nurture creativity in all students of Kinderex."
+					})
+				.col-sm-6.col-md-4.wow.fadeInLeft(data-wow-delay="0.3s")
+					+blurb-image({
+						icon: "linearicons-sun",
+						circleDecoration: "circle-bottom-left circle-yellow",
+						title: "Happy Environment",
+						exeption: "The best conditions for your child to have the unique learning experience."
+					})
+
+	// A Few Words About Us
+	section.section.section-lg.bg-gray-light
+		.container
+			.block-lg.text-center
+				h2 A Few Words About Us
+				p We are dedicated to providing a wide variety of childcare services to parents and their children, while also increasing the skills and basic knowledge of your children.
+
+			.row.row-20.justify-content-center.justify-content-lg-between
+				.col-md-10.col-lg-6.wow.fadeIn
+					+jpg("index-1-2-570x352", "img-bordered")
+				.col-md-10.col-lg-6.col-xl-5
+					.text-block-2
+						p At Kinderex, our mission is to provide excellence in preschool, kindergarten, before and after school programs and summer camp for families living in the greater local area. Here you’ll find exceptional teachers, curriculum and learning environments that encourage children to learn, play, and explore in a safe, healthy, and nurturing environment promoting creative thinking.
+						.progress-linear-wrap
+							+progress-bar-linear({
+								title: "Preschool Education",
+								valueTo: "75"
+							})
+							+progress-bar-linear({
+								title: "Summer Programs",
+								valueTo: "50"
+							})
+						a.button.button-md.button-primary(href="#") Learn More
+
+	// Our Programs
+	section.section.section-lg.bg-cover#programs(style="background-image: url('images/home-bg-1-1920x770.jpg')")
+		.container
+			h2.text-center.text-white Our Programs
+			.row.row-20.justify-content-center
+				.col-md-6.col-lg-4.col-10.col-sm-8.wow.fadeInRight
+					+informative-box({
+						src: 'box-img-1-370x272',
+						title: 'Arts Programs',
+						text: 'These programs provide extensive art experiences and activities for kids and teens.',
+						author: 'Stephen Rose'
+					})
+				.col-md-6.col-lg-4.col-10.col-sm-8.wow.fadeInRight(data-wow-delay=".1s")
+					+informative-box({
+						src: 'box-img-2-370x272',
+						title: 'Foreign Language Programs',
+						text: 'The goal of these programs is to prepare your child for better foreign language studying.',
+						author: 'Catherine White'
+					})
+				.col-md-6.col-lg-4.col-10.col-sm-8.wow.fadeInRight(data-wow-delay=".2s")
+					+informative-box({
+						src: 'box-img-3-370x272',
+						title: 'Sports Programs',
+						text: 'Competitive activities and movement classes form the basis of these programs.',
+						author: 'Stephen Rose'
+					})
+	// Testimonials
+	section.section.section-lg.bg-gray-light
+		.container.text-center
+			h2 Testimonials
+			// Owl Carousel
+			.owl-carousel.text-start(data-items='1', data-md-items='2', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='true', data-margin='30', data-mouse-drag="false", data-autoplay="true")
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "Words cannot express the thanks that my family has for each and every Kinderex early childhood teacher. Since my son enrolled, he has grown and matured into an amazing, intelligent young man.",
+					imageName: "user-1-64x64",
+					authorName: "Marie Hanson",
+					authorPosition: "Client"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "I enrolled my son in this nursery center when he was 13 months old. Once we did drop him off the first day, your teachers were there, with tissues in hand, assuring us that our baby would be OK.",
+					imageName: "user-2-64x64",
+					authorName: "Mildred Bates",
+					authorPosition: "Client"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "As a parent, I entrust my greatest blessing to the staff at Kinderex every day. The teachers and director look at each child as an individual, with their own strengths and needs.",
+					imageName: "user-3-64x64",
+					authorName: "Marta Stewart",
+					authorPosition: "Client"
+				})
+
+				+blockquote-boxed({
+					time: "2 days ago",
+					quote: "My son started at Kinderex at the beginning of the year. We were all a bit anxious to move him into a new environment, but it was the best decision we have made!",
+					imageName: "user-4-64x64",
+					authorName: "Sarah Johnson",
+					authorPosition: "Client"
+				})
+
+
+	// 4 Column Layout
+	section.section.section-lg#team
+		.container.text-center
+			h2.fw-light Our Wonderful Teachers
+			// Owl Carousel
+			.owl-carousel.text-start(data-items='1', data-sm-items='2', data-lg-items='3', data-xl-items='4', data-dots='true' data-nav='false' data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+
+				+thumbnail-1({
+					imageName: "team-1-270x270",
+					title: "Samuel Chapman",
+					link: "#",
+					position: "Founder, Center Director",
+					exeption: "Samuel Chapman is the founder and director of Kinderex who has spent his entire career working in a preschool setting."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-2-270x270",
+					title: "Stephen Rose",
+					link: "#",
+					position: "Lead Teacher",
+					exeption: "Stephen began teaching at Kinderex in 2009. His greatest source of professional fulfillment is to see children thrive socially."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-3-270x270",
+					title: "Catherine White",
+					link: "#",
+					position: "Assistant Teacher",
+					exeption: "Catherine White is our Assistant Teacher wo joined us a few years ago and received a certificate in Early Childhood Education."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+				+thumbnail-1({
+					imageName: "team-4-270x270",
+					title: "Danielle Gray",
+					link: "#",
+					position: "Family Support Specialist",
+					exeption: "Danielle Gray provides services and programs to enhance the self-sufficiency of families and improves children’s safety."
+				})
+					.group.group-middle.social-items
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-twitter(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-instagram(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-facebook-messenger(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-linkedin(href='#')
+						a.icon.icon-md.icon-gray-400.novi-icon.mdi.mdi-snapchat(href='#')
+
+
+	// Call to action
+	section.section.section-xs.accent-violet-bg
+		.container
+			.box-cta
+				.box-cta-inner
+					h3.text-white #1 Preschool Education Center
+				.box-cta-inner
+					a.button.button-lg.button-primary(href='#') Learn More
+
+	// Frequently Asked Questions
+	section.section.section-lg#faq
+		.container.text-center
+			h2 Frequently Asked Questions
+			.row.row-flex.row-40.number-counter.text-start
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title Do you provide any scripts with your templates?
+						p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support.
+						h5.title In what formats are your templates available?
+						p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file.
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title What payment methods can I use to pay for my order?
+						p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience. Some other payment methods are also available.
+						h5.title What are the advantages of purchasing a website template?
+						p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. The second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality regardless of its purpose.
+
+				.col-sm-12.col-lg-4.wow.fadeIn
+					.text-block-lined
+						h5.title What am I allowed to do with the templates?
+						p You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products.
+						h5.title What do I receive when I order a template from Zemez?
+						p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+			.button-wrap-lg
+				a.button.button-md.button-primary.button-long(href="#") View All Asked Questions
+
+	// Latest Blog Posts
+	section.section.section-lg.bg-gray-light
+		.container.text-center
+			h2 Latest Blog Posts
+			.row.row-flex.row-40.justify-content-center.number-counter.text-start.wow.fadeInUp
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-1-370x240",
+						title: "How Testing Buoyancy Can Build Babies’ Skills",
+						link: "#",
+						exeption: "The sound and sight of water are absolutely fascinating to infants. And for good reason! Water is a completely unique substance in the world, and..."
+					},
+					{
+						date: "2 days ago",
+						author: "Martha Ryan",
+						authorLink: "#"
+					},
+
+					[{"title": "News", "href": "#"}]
+					)
+
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-2-370x240",
+						title: "Preschool Science Activities Transform Kids into Independent Thinkers",
+						link: "#",
+						exeption: "For any parent looking for some home science fun with their little ones, we have put together a wonderful collection of safe, fun, and easy..."
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "#"
+					},
+
+					[{"title": "News", "href": "#"}]
+					)
+
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-3-370x240",
+						title: "The Road to Positive Parenting",
+						link: "#",
+						exeption: "Every parent grapples with this issue. If you have young children, you know how every day can be a struggle if your child doesn’t behave. Even the most..."
+					},
+					{
+						date: "2 days ago",
+						author: "Theresa Simpson",
+						authorLink: "#"
+					},
+
+					[{"title": "News", "href": "#"}]
+					)
+
+				.col-sm-6.col-lg-3
+					+post-classic-2(
+					{
+						imageName: "masonry-blog-4-370x240",
+						title: "Sensory Counting Games for Kids that Blend Fun and Education",
+						link: "#",
+						exeption: "Have you ever wondered why kids—especially the under-five set—tend to touch everything they possibly can, from boxes at the... "
+					},
+					{
+						date: "2 days ago",
+						author: "Lawrence Kelly",
+						authorLink: "#"
+					},
+
+					[{"title": "News", "href": "#"}]
+					)
+
+			.button-wrap-lg
+				a.button.button-sm.button-primary(href="#") View All Blog Posts
+
+	// Pricing
+	section.section.section-lg#pricing
+		.container.text-center
+			h2 Pricing
+			.row.g-0.justify-content-center.row-bordered-center
+				.col-md-4
+					+price-box-1({
+						boxClass: "price-box-green",
+						imageName: "pricing-1-132x160",
+						title: "Infants",
+						exeption: "This plan provides a full set of classes for infants, perfectly suited for making the first transition away from home natural and easy for your child.",
+						price: "$59.00/mo",
+						link: "#"
+					})
+				.col-md-4
+					+price-box-1({
+						boxClass: "price-box-orange price-box-1-primary",
+						imageName: "pricing-2-132x160",
+						title: "Kids",
+						exeption: "Our Kids plan is aimed at practicing the skills needed for kindergarten success, like following directions, reading, and writing.",
+						price: "$99.00/mo",
+						link: "#"
+					})
+				.col-md-4
+					+price-box-1({
+						boxClass: "price-box-red",
+						imageName: "pricing-3-132x160",
+						title: "Early Kindergarten",
+						exeption: "This plan is intended for our young 5-year-olds who miss the cut-off date for Kindergarten entrance or for those who need more time to prepare.",
+						price: "$199.00/mo",
+						link: "#"
+					})
+
+
+	// Mailform
+	section.section.section-md.bg-gray-light#contacts
+		.container
+			.row.row-50.justify-content-between
+				.col-md-12.col-lg-4
+					h4.fw-light Get in Touch
+					// RD Mailform
+					form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.form-wrap
+							input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name') Name
+
+						.form-wrap
+							input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email') E-mail
+
+						.form-wrap
+							label.form-label(for='contact-message') Message
+							textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+						button.button.button-primary(type='submit') Send
+				.col-md-12.col-lg-8
+					.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-zoom='5', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png', data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]' )
+						.google-map
+						ul.google-map-markers
+							li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow' )
+
+
+	// Page Footer
+	include ../sections/_footer-2
